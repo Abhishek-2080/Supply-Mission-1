@@ -33,9 +33,10 @@ function setup() {
 	world = engine.world;
    
 	
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {isStatic:true,restitution:1.0},package_Options);
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {isStatic:true,restitution:0.1},package_Options);
 	World.add(world, packageBody);
-	
+	//packageSprite.x= packageBody.position.x 
+    //packageSprite.y= packageBody.position.y
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
@@ -57,7 +58,7 @@ function draw() {
   packageSprite.y= packageBody.position.y
   
 	 
-  keyPressed();
+ // keyPressed();
 	 drawSprites();
 	 
 	 
@@ -72,7 +73,7 @@ function keyPressed() {
 		packageBody.velocityY=5;
 		var package_options={
 			isStatic:true,
-			restitution:0.001
+			restitution:0.01
 		}
 }
 
